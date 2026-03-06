@@ -1,3 +1,5 @@
+import "./TodoList.css"
+
 const TodoList = () => {
     return <div className="TodoList">
         <h4>Todo List 🌱</h4>
