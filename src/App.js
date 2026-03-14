@@ -28,6 +28,16 @@ const mockTodo = [
 function App() {
   const [todo, setTodo] = useState(mockTodo);
 
+  const onCreate = (content) => {
+    const newItem = {
+      id: 0,
+      content,
+      isDone: false,
+      createdDate: new Date().getTime(),
+    };
+    setTodo([newItem, ...todo]);
+  }
+
   return <div className="App">
     <Header />
     <TodoEditor />
