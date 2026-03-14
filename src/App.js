@@ -31,17 +31,18 @@ function App() {
 
   const onCreate = (content) => {
     const newItem = {
-      id: 0,
+      id: idRef.current,
       content,
       isDone: false,
       createdDate: new Date().getTime(),
     };
     setTodo([newItem, ...todo]);
+    idRef.current += 1;
   }
 
   return <div className="App">
     <Header />
-    <TodoEditor />
+    <TodoEditor onCreate={onCreate} />
     <TodoList />
   </div>
 }
